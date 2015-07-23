@@ -1,13 +1,13 @@
 === Inbound Rocket by Inbound Rocket ===
 Contributors: inboundrocket
-Tags: email, email form, email list, sharing, selection, content, click to tweet, medium, Twitter, Facebook, LinkedIn, growth, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share text, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM, CRM tools, customer relationship management, contacts, contacts database, leads, lead capture, lead collection, lead management, marketing, marketing automation, lead tracking, track leads, lead tracker, WordPress leads, click tracking, analytics,  
+Tags: email, email form, email list, sharing, selection, content, click to tweet, medium, Twitter, Facebook, LinkedIn, growth, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share text, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM, CRM tools, customer relationship management, contacts, contacts database, leads, lead capture, lead collection, lead management, marketing, marketing automation, lead tracking, track leads, lead tracker, WordPress leads, click tracking, analytics
 Requires at least: 2.5
 Tested up to: 4.2.2
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The free and easiest way to double your leads. Inbound Rocket is an easy-to-use marketing automation and lead tracking plugin for WordPress that helps your traffic get shared and turn your visitors into leads.
+The easiest way to double your leads. Inbound Rocket is an easy-to-use marketing automation and lead tracking plugin for WordPress that helps your traffic get shared and turn your visitors into leads.
 
 == Description ==
 Most websites are designed for hit-and-run readers. People find your site, read your article, and leave. Wouldn't it be nice if some of those people subscribe or share your amazing content?
