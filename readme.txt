@@ -1,6 +1,6 @@
 === Inbound Rocket by Inbound Rocket ===
 Contributors: inboundrocket
-Tags: medium, Twitter, email, email form, sharing, selection, content, click to tweet, Facebook, growth, image bookmarking, image sharing, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share image, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM tools, customer relationship management, leads, lead capture, lead collection, lead management, marketing, marketing automation
+Tags: medium, Twitter, email, email form, sharing, selection, content, click to tweet, Facebook, growth, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share text, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM tools, customer relationship management, leads, lead capture, lead collection, lead management, marketing, marketing automation, lead tracking, lead tracker, crm, wordpress leads
 Requires at least: 2.5
 Tested up to: 4.2.2
 Stable tag: 1.0
