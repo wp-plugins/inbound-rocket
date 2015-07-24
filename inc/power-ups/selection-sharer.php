@@ -80,8 +80,7 @@ class WPSelectionSharer extends WPInboundRocket {
 
 	public function admin_init()
 	{
-		$admin_class = get_class($this) . 'Admin';
-		$this->admin = $admin_class::init();
+		$this->admin = WPSelectionSharerAdmin::init();
 	}
 	
 	public function inboundrocket_ss_premium()

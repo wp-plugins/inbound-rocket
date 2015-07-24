@@ -3,7 +3,7 @@
 Plugin Name: Inbound Rocket
 Plugin URI: http://wordpress.org/extend/plugins/inbound-rocket/
 Description: Introducing a new way of generating traffic and converting them into leads on WordPress. Inbound Rocket is an easy-to-use marketing automation plugin for Wordpress. It features visitor activity tracking and the management of incoming leads to better understand your web visitors. It also offers great power-ups to help you get even more visitors and help them convert to leads, subscribers and customers.
-Version: 1.0
+Version: 1.0.1
 Author: Inbound Rocket
 Author URI: http://inboundrocket.co/
 License: GPLv2
@@ -258,9 +258,14 @@ function activate_inboundrocket_on_new_blog( $blog_id, $user_id, $domain, $path,
  */
 function uninstall_inboundrocket()
 {	
-	if( !defined( 'ABSPATH') || !defined('WP_UNINSTALL_PLUGIN') ) wp_die("Busted!");
+	if( !defined( 'ABSPATH') ) exit();
     
 	global $wpdb;
+	
+	$options = get_option('inboundrocket_options');
+	$email = isset($options['ir_email']) ? $options['ir_email'] : get_bloginfo('admin_email');
+	
+	inboundrocket_mark_deleted_user($email);
 				
 	$wpdb->query("DROP TABLE IF EXISTS {$wpdb->ir_leads}");
 	$wpdb->query("DROP TABLE IF EXISTS {$wpdb->ir_pageviews}");

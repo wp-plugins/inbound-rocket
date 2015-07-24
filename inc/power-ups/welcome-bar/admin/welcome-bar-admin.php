@@ -9,7 +9,7 @@ class WPWelcomeBarAdmin extends WPInboundRocketAdmin {
     var $power_up_icon;
     var $options;
     
-    private static $_instance;
+    private static $_instance = null;
     
     /**
      * Class constructor

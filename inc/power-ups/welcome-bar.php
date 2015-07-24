@@ -71,8 +71,7 @@ class WPWelcomeBar extends WPInboundRocket {
 
 	public function admin_init ( )
 	{
-		$admin_class = get_class($this) . 'Admin';
-		$this->admin = $admin_class::init();
+		$this->admin = WPWelcomeBarAdmin::init();
 	}
 
 	function power_up_setup_callback ( )

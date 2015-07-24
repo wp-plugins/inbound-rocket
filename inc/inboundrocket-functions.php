@@ -74,6 +74,8 @@ function inboundrocket_get_current_user ()
     else {
         $ir_user_email = $current_user->user_email;
     }
+    
+    $plugins = wp_get_active_and_valid_plugins();
 
     $inboundrocket_user = array(
         'user_id' => $ir_user_id,
@@ -82,7 +84,8 @@ function inboundrocket_get_current_user ()
         'wp_url' => get_site_url(),
         'ir_version' => INBOUNDROCKET_PLUGIN_VERSION,
         'wp_version' => $wp_version,
-        'total_contacts' => get_total_contacts()
+        'total_contacts' => get_total_contacts(),
+        'wp_plugins' => $plugins,
     );
 
     return $inboundrocket_user;
@@ -121,10 +124,11 @@ function inboundrocket_register_user()
     $mp->identify($inboundrocket_user['user_id']);
     $mp->createAlias( $inboundrocket_user['user_id'], $inboundrocket_user['alias']);
     $mp->people->set( $inboundrocket_user['user_id'], array(
+	    '$ir-version'   => $inboundrocket_user['ir_version'],
         '$email'        => $inboundrocket_user['email'],
         '$wp-url'       => $inboundrocket_user['wp_url'],
         '$wp-version'   => $inboundrocket_user['wp_version'],
-        '$ir-version'   => $inboundrocket_user['ir_version']
+        '$wp-plugins'	=> $inboundrocket_user['wp_plugins']
     ));
 
     $mp->people->setOnce( $inboundrocket_user['user_id'], array(
@@ -179,9 +183,10 @@ function inboundrocket_update_user ()
     $mp = Mixpanel::getInstance(INBOUNDROCKET_MIXPANEL_PROJECT_TOKEN, array("debug" => true));
     $mp->people->set( $inboundrocket_user['user_id'], array(
         "distinct_id"   => md5(get_site_url()),
+        '$ir-version'   => $inboundrocket_user['ir_version'],
         '$wp-url'       => get_site_url(),
         '$wp-version'   => $inboundrocket_user['wp_version'],
-        '$ir-version'   => $inboundrocket_user['ir_version']
+        '$wp-plugins'	=> $inboundrocket_user['wp_plugins']
     ));
 
     inboundrocket_track_plugin_activity("Upgraded Plugin");
@@ -214,10 +219,35 @@ function inboundrocket_subscribe_user_updates($subscribe, $user_email)
         "update_existing"   => TRUE,
         'replace_interests' => FALSE,
         'double_optin'      => FALSE,
-        "merge_vars"        => array('EMAIL' => $user_email, 'NEWSLETTER' => 'Yes please!', 'PRODUCTUPD' => $productupdate, 'INSTALLED' => 'Yes', 'INSTALLURL' => get_site_url(), 'INSTALLDAT' => date('m/d/Y',strtotime("now")), 'VERSION' => INBOUNDROCKET_PLUGIN_VERSION, 'PREMIUM' => 'Non-Premium' )
+        "merge_vars"        => array('EMAIL' => $user_email, 'DELETED' => 'No', 'NEWSLETTER' => 'Yes please!', 'PRODUCTUPD' => $productupdate, 'INSTALLED' => 'Yes', 'INSTALLURL' => get_site_url(), 'INSTALLDAT' => date('m/d/Y',strtotime("now")), 'VERSION' => INBOUNDROCKET_PLUGIN_VERSION, 'PREMIUM' => 'Non-Premium' )
     ));
 
     inboundrocket_track_plugin_activity('Onboarding Opted-into User Updates');
+
+    return $contact_synced;
+}
+
+/**
+ * Marks user as deleted in MailChimp
+ *
+ * @return  bool
+ *
+ */
+function inboundrocket_mark_deleted_user($user_email)
+{
+    $MailChimp = new MailChimp(INBOUNDROCKET_MC_KEY);
+    $contact_synced = $MailChimp->call("lists/subscribe", array(
+        "id"                => INBOUNDROCKET_MC_LIST,
+        "email"             => array('email' => $user_email),
+        "send_welcome"      => FALSE,
+        "email_type"        => 'html',
+        "update_existing"   => TRUE,
+        'replace_interests' => FALSE,
+        'double_optin'      => FALSE,
+        "merge_vars"        => array('EMAIL' => $user_email, 'INSTALLED' => 'No', 'DELETED' => 'Yes', 'DELETEDAT' => date('m/d/Y',strtotime("now")) )
+    ));
+
+    inboundrocket_track_plugin_activity('User marked deleted from MailChimp');
 
     return $contact_synced;
 }
@@ -324,12 +354,14 @@ function inboundrocket_track_plugin_activity ( $activity_desc, $custom_propertie
     global $current_user;
     get_currentuserinfo();
     $user_id = md5(get_site_url());
+    $plugins = wp_get_active_and_valid_plugins();
 
     $default_properties = array(
         "distinct_id" => $user_id,
         '$wp-url' => get_site_url(),
         '$wp-version' => $wp_version,
-        '$ir-version' => INBOUNDROCKET_PLUGIN_VERSION
+        '$ir-version' => INBOUNDROCKET_PLUGIN_VERSION,
+        '$wp-plugins' => $plugins
     );
 
     $properties = array_merge((array)$default_properties, (array)$custom_properties);

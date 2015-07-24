@@ -2,12 +2,12 @@
 Contributors: inboundrocket
 Tags: email, email form, email list, sharing, selection, content, click to tweet, medium, Twitter, Facebook, LinkedIn, growth, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share text, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM, CRM tools, customer relationship management, contacts, contacts database, leads, lead capture, lead collection, lead management, marketing, marketing automation, lead tracking, track leads, lead tracker, WordPress leads, click tracking, analytics
 Requires at least: 2.5
-Tested up to: 4.2.2
-Stable tag: 1.0
+Tested up to: 4.2.3
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The easiest way to double your leads. Inbound Rocket is an easy-to-use marketing automation and lead tracking plugin for WordPress that helps your traffic get shared and turn your visitors into leads.
+The free and easiest way to double your leads. Inbound Rocket is an easy-to-use marketing automation and lead tracking plugin for WordPress that helps your traffic get shared and turn your visitors into leads.
 
 == Description ==
 Most websites are designed for hit-and-run readers. People find your site, read your article, and leave. Wouldn't it be nice if some of those people subscribe or share your amazing content?
@@ -61,6 +61,14 @@ Inbound Rocket collects usage information about this plugin so that we can bette
 5. Inbound Rocket power-up - Welcome bar: Welcome Bar on Desktop (optimised mobile version available too)
 
 == Changelog ==
+
+= 1.0.1 =
+One day after our initial release, the award for finding the first bug goes to "andredemoraes"! Thanks a lot Andre, for finding this one!
+
+* Fixed a small bug preventing the proper uninstallation of the plugin
+* Fixed a bug to make the plugin compatible with PHP 5.2.x
+
+This means that if you're running an older version of PHP we now got you covered from 5.2.x and upwards!
 
 = 1.0 =
 * First release

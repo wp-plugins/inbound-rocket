@@ -9,7 +9,7 @@ class WPClickToTweetAdmin extends WPInboundRocketAdmin {
     var $power_up_settings_section = 'inboundrocket_ctt_options';
     var $options;
     
-    private static $_instance;
+    private static $_instance = null;
     
     /**
      * Class constructor
