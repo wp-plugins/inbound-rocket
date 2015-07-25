@@ -63,7 +63,7 @@ Inbound Rocket collects usage information about this plugin so that we can bette
 == Changelog ==
 
 = 1.0.1 =
-One day after our initial release, the award for finding the first bug goes to "andredemoraes"! Thanks a lot Andre, for finding this one!
+One day after our initial release, the award for finding the first bug goes to André! Thanks a lot André, for finding this one!
 
 * Fixed a small bug preventing the proper uninstallation of the plugin
 * Fixed a bug to make the plugin compatible with PHP 5.2.x
