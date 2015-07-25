@@ -49,7 +49,11 @@ class WPInboundRocket {
     {
 	    wp_register_script('inboundrocket-tracking-swf-script', INBOUNDROCKET_PATH . '/inc/assets/js/swfobject-2.2.min.js', null, false, true);
         wp_enqueue_script('inboundrocket-tracking-swf-script');
-        wp_register_script('inboundrocket-tracking-ever-script', INBOUNDROCKET_PATH . '/inc/assets/js/evercookie.js', null, false, true);
+        if (INBOUNDROCKET_ENABLE_DEBUG==true) {
+	        wp_register_script('inboundrocket-tracking-ever-script', INBOUNDROCKET_PATH . '/inc/assets/js/evercookie.js', null, false, true);
+		} else {
+	        wp_register_script('inboundrocket-tracking-ever-script', INBOUNDROCKET_PATH . '/inc/assets/js/evercookie.min.js', null, false, true);
+        }
         wp_enqueue_script('inboundrocket-tracking-ever-script');
         wp_localize_script(
             'inboundrocket-tracking-ever-script',
