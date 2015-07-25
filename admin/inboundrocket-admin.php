@@ -1613,7 +1613,7 @@ class WPInboundRocketAdmin {
                 <a class="button" href="mailto:help@inboundrocket.co?Subject=Hello" title="Contact Inbound Rocket Support."><?php _e('Mail with us','inboundrocket');?></a>
             <?php else : ?>
                 <p><?php _e('Leave us a message in the WordPress support forums. We\'re always happy to help you get set up and can answer any questions there.','inboundrocket');?></p>
-                <a class="button" href="https://wordpress.org/support/plugin/inboundrocket" target="_blank"><?php _e('Go to Forums','inboundrocket');?></a>
+                <a class="button" href="https://wordpress.org/support/plugin/inbound-rocket" target="_blank"><?php _e('Go to Forums','inboundrocket');?></a>
             <?php endif; ?>
         </div>
         
@@ -1981,10 +1981,10 @@ class WPInboundRocketAdmin {
 								<?php if ( isset($ir_options['premium']) && $ir_options['premium'] ) : ?>
 								<li>Need help? <a href="mailto:help@inboundrocket.co?Subject=Oops.." title="<?php _e('Contact Inbound Rocket Support.','inboundrocket'); ?>"><?php _e('Contact Us','inboundrocket'); ?></a></li>
 								<?php else : ?>
-								<li><a href="https://wordpress.org/support/plugin/inboundrocket" target="_blank"><?php _e('Support forums', 'inboundrocket'); ?></a></li>
+								<li><a href="https://wordpress.org/support/plugin/inbound-rocket" target="_blank"><?php _e('Support forums', 'inboundrocket'); ?></a></li>
 								<?php endif; ?>
 								<li><a href="http://inboundrocket.co/blog/" title="<?php _e('Get product &amp; security updates','inboundrocket'); ?>" target="_blank"><?php _e('Get product &amp; security updates','inboundrocket'); ?></a></li>
-								<li><a href="http://wordpress.org/support/view/plugin-reviews/inboundrocket?rate=5#postform" title="<?php _e('Leave us a review','inboundrocket'); ?>"><?php _e('Leave us a review','inboundrocket'); ?></a></li>
+								<li><a href="https://wordpress.org/support/view/plugin-reviews/inbound-rocket?rate=5#postform" title="<?php _e('Leave us a review','inboundrocket'); ?>"><?php _e('Leave us a review','inboundrocket'); ?></a></li>
 							</ul>
 						</nav><!-- .secondary -->
 						
