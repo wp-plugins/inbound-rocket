@@ -63,7 +63,9 @@ Inbound Rocket collects usage information about this plugin so that we can bette
 == Changelog ==
 
 = 1.0.4 =
-* fix for mailchimp declaration bug. Thank you Norbert!
+Thanks Norbert for spotting another minor bug in there! This release includes two smaller bug fixes which made the plugin throw some errors when you were using Elegant Themes. Sorry for that, but thankfully it was quickly fixed :-)
+
+If you got suggestions or want to report problems, please do reach out! We’re eager to fix them. <3
 
 = 1.0.3 =
 * corrected the footer links, they now point to the correct place on wordpress.org
