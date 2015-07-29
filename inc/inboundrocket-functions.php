@@ -210,7 +210,7 @@ function inboundrocket_subscribe_user_updates($subscribe, $user_email)
 	    $productupdate = 'Rather not :-/';
     }
 
-    $MailChimp = new MailChimp(INBOUNDROCKET_MC_KEY);
+    $MailChimp = new IR_MailChimp(INBOUNDROCKET_MC_KEY);
     $contact_synced = $MailChimp->call("lists/subscribe", array(
         "id"                => INBOUNDROCKET_MC_LIST,
         "email"             => array('email' => $user_email),
@@ -235,7 +235,7 @@ function inboundrocket_subscribe_user_updates($subscribe, $user_email)
  */
 function inboundrocket_mark_deleted_user($user_email)
 {
-    $MailChimp = new MailChimp(INBOUNDROCKET_MC_KEY);
+    $MailChimp = new IR_MailChimp(INBOUNDROCKET_MC_KEY);
     $contact_synced = $MailChimp->call("lists/subscribe", array(
         "id"                => INBOUNDROCKET_MC_LIST,
         "email"             => array('email' => $user_email),

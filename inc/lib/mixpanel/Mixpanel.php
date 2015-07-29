@@ -106,6 +106,7 @@ require_once(dirname(__FILE__) . "/Producers/MixpanelEvents.php");
  * ));
  *
  */
+if(!class_exists('Mixpanel')):
 class Mixpanel extends Base_MixpanelBase {
 
 
@@ -300,3 +301,4 @@ class Mixpanel extends Base_MixpanelBase {
         $this->_events->createAlias($original_id, $new_id);
     }
 }
+endif;

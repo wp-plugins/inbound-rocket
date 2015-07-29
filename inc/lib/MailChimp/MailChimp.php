@@ -12,7 +12,8 @@
  * @author Drew McLellan <drew.mclellan@gmail.com> 
  * @version 1.1.1
  */
-class MailChimp
+if(!class_exists('IR_Mailchimp')):
+class IR_MailChimp
 {
     private $api_key;
     private $api_endpoint = 'https://<dc>.api.mailchimp.com/2.0';
@@ -82,3 +83,4 @@ class MailChimp
         return $result ? json_decode($result, true) : false;
     }
 }
+endif;

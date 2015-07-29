@@ -3,7 +3,7 @@ Contributors: inboundrocket
 Tags: email, email form, email list, sharing, selection, content, click to tweet, medium, Twitter, Facebook, LinkedIn, growth, inbound marketing, mail, mailing list, newsletter, popover, popup, posts, share, share text, social bookmarking, social media, social plugin, subscribe, subscribers, tweet button, CRM, CRM tools, customer relationship management, contacts, contacts database, leads, lead capture, lead collection, lead management, marketing, marketing automation, lead tracking, track leads, lead tracker, WordPress leads, click tracking, analytics
 Requires at least: 2.5
 Tested up to: 4.2.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ Inbound Rocket collects usage information about this plugin so that we can bette
 5. Inbound Rocket power-up - Welcome bar: Welcome Bar on Desktop (optimised mobile version available too)
 
 == Changelog ==
+
+= 1.0.4 =
+* fix for mailchimp declaration bug. Thank you Norbert!
 
 = 1.0.3 =
 * corrected the footer links, they now point to the correct place on wordpress.org
