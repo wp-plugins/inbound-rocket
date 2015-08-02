@@ -1984,7 +1984,7 @@ class WPInboundRocketAdmin {
 								<li><a href="https://wordpress.org/support/plugin/inbound-rocket" target="_blank"><?php _e('Support forums', 'inboundrocket'); ?></a></li>
 								<?php endif; ?>
 								<li><a href="http://inboundrocket.co/blog/" title="<?php _e('Get product &amp; security updates','inboundrocket'); ?>" target="_blank"><?php _e('Get product &amp; security updates','inboundrocket'); ?></a></li>
-								<li><a href="https://wordpress.org/support/view/plugin-reviews/inbound-rocket?rate=5#postform" title="<?php _e('Leave us a review','inboundrocket'); ?>"><?php _e('Leave us a review','inboundrocket'); ?></a></li>
+								<li><a href="https://wordpress.org/support/view/plugin-reviews/inbound-rocket?rate=5#postform" title="<?php _e('Leave us a review','inboundrocket'); ?>" target="_blank"><?php _e('Leave us a review','inboundrocket'); ?></a></li>
 							</ul>
 						</nav><!-- .secondary -->
 						
